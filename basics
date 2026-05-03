@@ -1,0 +1,356 @@
+
+
+# Bash Scripting Notes ( basics)
+
+## Basic Commands
+
+echo → print text
+ls → list files
+cat → view file
+pwd → current directory
+cd → change directory
+
+Examples:
+
+```
+echo "Hello World"
+
+ls -l
+
+cat file.txt
+```
+
+### Practice (basic commands)
+
+1.
+
+```
+echo "This is my first bash script"
+```
+
+2.
+
+```
+echo "Current directory:"
+pwd
+```
+
+3.
+
+```
+ls
+```
+
+4.
+
+```
+ls -la
+```
+
+5.
+
+```
+cat /etc/passwd
+```
+
+---
+
+## Variables
+
+Declaration:
+
+```
+name="chris"
+```
+
+Usage:
+
+```
+echo $name
+```
+
+User input:
+
+```
+read username
+echo "Hello $username"
+```
+
+### Practice (variables)
+
+1.
+
+```
+name="John"
+echo $name
+```
+
+2.
+
+```
+a=10
+b=20
+echo $a
+echo $b
+```
+
+3.
+
+```
+read name
+echo "Welcome $name"
+```
+
+4.
+
+```
+x=5
+y=10
+sum=$((x+y))
+echo $sum
+```
+
+---
+
+## Input / Output Redirection
+
+```
+>  overwrite
+>> append
+<  input
+|  pipe
+```
+
+Examples:
+
+```
+echo "hello" > file.txt
+echo "world" >> file.txt
+cat < file.txt
+```
+
+Pipe:
+
+```
+cat file.txt | grep hello
+```
+
+### Practice (redirection)
+
+1.
+
+```
+echo "Hello" > a.txt
+```
+
+2.
+
+```
+echo "World" >> a.txt
+```
+
+3.
+
+```
+cat a.txt
+```
+
+4.
+
+```
+wc -l < a.txt
+```
+
+5.
+
+```
+ls | wc -l
+```
+
+---
+
+## Conditionals (if-else)
+
+Syntax:
+
+```
+if [ condition ]
+then
+    command
+else
+    command
+fi
+```
+
+Example:
+
+```
+a=10
+if [ $a -gt 5 ]
+then
+    echo "greater"
+else
+    echo "smaller"
+fi
+```
+
+### Practice (if-else)
+
+1.
+
+```
+read num
+if [ $num -gt 0 ]
+then
+    echo "positive"
+else
+    echo "negative"
+fi
+```
+
+2.
+
+```
+read a
+read b
+if [ $a -eq $b ]
+then
+    echo "equal"
+else
+    echo "not equal"
+fi
+```
+
+3.
+
+```
+read name
+if [ "$name" = "admin" ]
+then
+    echo "welcome admin"
+else
+    echo "user"
+fi
+```
+
+---
+
+## Loops
+
+### for loop
+
+```
+for i in 1 2 3 4 5
+do
+    echo $i
+done
+```
+
+### while loop
+
+```
+i=1
+while [ $i -le 5 ]
+do
+    echo $i
+    ((i++))
+done
+```
+
+### Practice (loops)
+
+1.
+
+```
+for i in 1 2 3 4 5
+do
+    echo $i
+done
+```
+
+2.
+
+```
+for i in {1..10}
+do
+    echo $i
+done
+```
+
+3.
+
+```
+i=1
+while [ $i -le 10 ]
+do
+    echo $i
+    ((i++))
+done
+```
+
+4.
+
+```
+for file in *.txt
+do
+    echo $file
+done
+```
+
+---
+
+## Script Execution
+
+Shebang:
+
+```
+#!/bin/bash
+```
+
+Make executable:
+
+```
+chmod +x script.sh
+```
+
+Run:
+
+```
+./script.sh
+```
+
+or
+
+```
+bash script.sh
+```
+
+### Practice (scripts)
+
+1.
+
+```
+#!/bin/bash
+echo "Hello from script"
+```
+
+2.
+
+```
+#!/bin/bash
+read name
+echo "Hello $name"
+```
+
+3.
+
+```
+#!/bin/bash
+a=5
+b=10
+echo $((a+b))
+```
+
+
+
+
