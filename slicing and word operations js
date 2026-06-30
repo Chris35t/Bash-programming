@@ -1,0 +1,7 @@
+var name = "redroot"
+var final = name.slice(0,2)
+up = final.toUpperCase()
+low = final.toLowerCase()
+console.log(final)
+console.log(up)
+console.log(low)
