@@ -1,0 +1,7 @@
+function time(age){
+    var year = 78 - age
+    var week = year * 52
+    var days = year * 365
+    console.log("You have " + week+ " left to live and "+ days + " left to live")
+}
+time(18)
